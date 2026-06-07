@@ -1,0 +1,280 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = 'tribes'
+
+format = """
+[](color_bg_os)\
+$os\
+$username\
+${env_var.__ShellDepthIcon}\
+
+[ ](fg:color_bg_os bg:color_bg_path)\
+$directory\
+[ ](fg:color_bg_path bg:color_bg_git)\
+$git_branch\
+$git_status\
+$git_state\
+$git_commit\
+
+[ ](fg:color_bg_git bg:color_bg_lang)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+
+[ ](fg:color_bg_lang bg:color_bg_env)\
+$conda\
+$docker_context\
+$kubernetes\
+$pixi\
+
+[ ](fg:color_bg_env bg:color_bg_time)\
+$time\
+$cmd_duration\
+
+[](color_bg_time)\
+$line_break\
+$character"""
+
+# ── 操作系统模块 ──────────────────────────────────────────────────────
+
+[os]
+disabled = false
+style = 'bg:color_bg_os fg:color_fg_os'
+format = '[$symbol ]($style)'
+
+[os.symbols]
+Windows          = '󰍲'
+Ubuntu           = '󰕈'
+SUSE             = ''
+Raspbian         = '󰐿'
+Mint             = '󰣭'
+Macos            = '󰀵'
+Manjaro          = ''
+Linux            = '󰌽'
+Gentoo           = '󰣨'
+Fedora           = '󰣛'
+Alpine           = ''
+Amazon           = ''
+Android          = ''
+AOSC             = ''
+Arch             = '󰣇'
+Artix            = '󰣇'
+EndeavourOS      = ''
+CentOS           = ''
+Debian           = '󰣚'
+Redhat           = '󱄛'
+RedHatEnterprise = '󱄛'
+Pop              = ''
+Zorin            = ''
+
+[username]
+disabled = false
+show_always = true
+style_user  = 'bg:color_bg_os fg:color_fg_os'
+style_root  = 'bg:color_bg_os fg:color_fg_os'
+format      = '[$user ]($style)'
+
+[env_var.__ShellDepthIcon]
+disabled    = false
+variable    = "__ShellDepthIcon"
+style       = 'bg:color_bg_os fg:color_fg_os'
+format      = "([$env_value ]($style))"
+
+# ── 目录模块 ──────────────────────────────────────────────────────────
+
+[directory]
+truncation_length = 3
+truncation_symbol = '…/'
+read_only         = '󰌾 '
+style             = 'bg:color_bg_path fg:color_fg_path'
+read_only_style   = 'bg:color_bg_path fg:color_bg_env'
+format            = '[$path ]($style)[$read_only]($read_only_style)'
+
+# ── Git模块 ───────────────────────────────────────────────────────────
+
+[git_branch]
+disabled = false
+symbol   = ''
+style    = 'bg:color_bg_git fg:color_fg_git'
+format   = '[$symbol $branch ]($style)'
+
+[git_status]
+disabled = false
+conflicted  = ' '
+stashed     = ' '
+deleted     = ' '
+renamed     = ' 󰑕'
+modified    = ' '
+typechanged = ' 󰕁'
+staged      = ' $count:'
+untracked   = ' $count:'
+diverged    = '  $ahead_count $behind_count'
+ahead       = ' $count:'
+behind      = ' $count:'
+up_to_date  = ' '
+style    = 'bg:color_bg_git fg:color_fg_git'
+format   = '([$all_status($ahead_behind) ]($style))'
+
+[git_state]
+disabled = false
+merge       = ''
+bisect      = ''
+rebase      = ''
+revert      = '󰕌'
+cherry_pick = ''
+am          = ''
+am_or_rebase = ' or  '
+style    = 'bg:color_bg_git fg:color_fg_git'
+format   = '[ $state( $progress_current/$progress_total) ]($style)'
+
+[git_commit]
+disabled           = false
+only_detached      = false
+tag_disabled       = false
+commit_hash_length = 5
+tag_symbol         = ' '
+style              = 'bg:color_bg_git fg:color_fg_git'
+format             = '[  $hash ($tag )]($style)'
+
+# ── 语言模块 ──────────────────────────────────────────────────────────
+
+[c]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[cpp]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[golang]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[haskell]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[java]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[kotlin]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[nodejs]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[php]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+[python]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+python_binary = [['uv', 'run', '--no-python-downloads', 'python'], 'python', 'python3', '.pixi/envs/default/bin/python']
+
+[rust]
+symbol = ''
+style  = 'bg:color_bg_lang fg:color_fg_lang'
+format = "[$symbol $version ]($style)"
+
+# ── 环境模块 ──────────────────────────────────────────────────────────
+
+[kubernetes]
+disabled         = false
+symbol           = '󱃾'
+detect_env_vars  = ['KUBECONFIG']
+detect_files     = ['k8s', '.k8s', '.kube']
+style            = 'bg:color_bg_env fg:color_fg_env'
+format           = '[$symbol $context:$namespace ]($style)'
+
+[docker_context]
+disabled = false
+symbol   = ''
+style    = 'bg:color_bg_env fg:color_fg_env'
+format   = '[$symbol( $context) ]($style)'
+
+[conda]
+disabled    = false
+symbol      = '🅒'
+ignore_base = false
+style       = 'bg:color_bg_env fg:color_fg_env'
+format      = '[$symbol( $environment) ]($style)'
+
+[pixi]
+disabled = false
+symbol   = '󰇾'
+style    = 'bg:color_bg_env fg:color_fg_env'
+format   = '[$symbol $version ]($style)'
+
+# ── 时间模块 ──────────────────────────────────────────────────────────
+
+[time]
+disabled    = false
+time_format = '%R'
+style       = 'fg:color_fg_time bg:color_bg_time'
+format      = '[ $time]($style)'
+
+[cmd_duration]
+disabled          = false
+min_time          = 500
+show_milliseconds = true
+style             = 'fg:color_fg_time bg:color_bg_time'
+format            = '[  $duration]($style)'
+
+# ── 提示符字符模块 ────────────────────────────────────────────────────
+
+[line_break]
+disabled = false
+[character]
+success_symbol = '[❯](fg:bold green)[❯](fg:bold orange)[❯](fg:bold red)'
+error_symbol   = '[❯](fg:bold red)[❯](fg:bold red)[❯](fg:bold red)'
+vimcmd_symbol             = '[❮](fg:bold green)[❮](fg:bold orange)[❮](fg:bold red)'
+vimcmd_replace_one_symbol = '[❮](fg:bold yellow)[❮](fg:bold yellow)[❮](fg:bold yellow)'
+vimcmd_replace_symbol     = '[❮](fg:bold yellow)[❮](fg:bold yellow)[❮](fg:bold yellow)'
+vimcmd_visual_symbol      = '[❮](fg:bold cyan)[❮](fg:bold cyan)[❮](fg:bold cyan)'
+
+# ── 调色板定义 ────────────────────────────────────────────────────────
+
+[palettes.tribes]  # https://colorleap.app/time/1930
+color_bg_os   = '#38526E'
+color_bg_path = '#DAC9AF'
+color_bg_git  = '#C19C82'
+color_bg_lang = '#AE7757'
+color_bg_env  = '#6C4838'
+color_bg_time = '#A52A45'
+
+color_fg_os   = '#fbf1c7'
+color_fg_path = '#040e38'
+color_fg_git  = '#040e38'
+color_fg_lang = '#fbf1c7'
+color_fg_env  = '#fbf1c7'
+color_fg_time = '#fbf1c7'
+
+[palettes.pure]
+color_fg_os   = '#fbf1c7'
+color_fg_path = '#9aedfe'
+color_fg_git  = '#ff6ac1'
+color_fg_lang = '#F48603'
+color_fg_env  = '#FC5953'
+color_fg_time = '#eadb03'
+
+ # tribes, pure
