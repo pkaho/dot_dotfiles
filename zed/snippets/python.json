@@ -1,0 +1,45 @@
+{
+    "Main entry point": {
+		"prefix": "pymain",
+		"description": "Main entry point",
+		"body": [
+			"def main() -> None:",
+			"    ${1:...}",
+			"",
+			"",
+			"if __name__ == '__main__':",
+			"    main()",
+			""
+		]
+	},
+	"Create a function": {
+		"prefix": "pydef",
+		"description": "Create a Function",
+		"body": [
+			"def ${1:function_name}($2) -> ${3:None}:",
+			"    ${4:...}",
+			"",
+			""
+		]
+	},
+	"Quick print": {
+		"prefix": "qprint",
+		"description": "Quick print",
+		"body": [
+			"print(f'${1:name} = {${2:value}}')",
+			"$0"
+		]
+	},
+
+	"Quick try/except": {
+		"prefix": "qtry",
+		"description": "Quick try/except block",
+		"body": [
+			"try:",
+			"    ${1:...}",
+			"except Exception as e:",
+			"    print(f'{type(e).__name__}: {e}')",
+			"$0"
+		]
+	}
+}

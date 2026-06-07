@@ -1,0 +1,13 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+//
+// Example:
+[
+    {
+        "label": "r/python",
+        // "command": "python $ZED_FILE",
+        "command": "python",
+        "args": ["$ZED_FILE"],
+        "use_new_terminal": false,
+        "allow_concurrent_runs": true
+    }
+]

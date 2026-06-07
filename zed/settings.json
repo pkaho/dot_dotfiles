@@ -1,0 +1,112 @@
+// ref: https://zed.dev/docs/configuring-zed
+{
+    // =====================================
+    // UI
+    // =====================================
+    "vim_mode": true,
+    "theme": {
+        "mode": "dark",
+        "light": "Ayu Light",
+        "dark": "Ayu Dark"
+    },
+    "icon_theme": "Material Icon Theme",
+    "title_bar": { "show_menus": false },
+    "tabs": { "file_icons": true },
+    "active_pane_modifiers": { "border_size": 2, "inactive_opacity": 0.8 },
+    "line_indicator_format": "long",
+
+    // =====================================
+    // Editor
+    // =====================================
+    "base_keymap": "VSCode",
+    "format_on_save": "on",
+    "tab_size": 4,
+    "relative_line_numbers": "enabled",
+    "allow_rewrap": "anywhere",
+    "remove_trailing_whitespace_on_save": true,
+    "ensure_final_newline_on_save": true,
+    "soft_wrap": "preferred_line_length",
+    "preferred_line_length": 120,
+    "file_scan_exclusions": ["**/.git", "**/__pycache__"],
+    "autosave": {
+        "after_delay": { "milliseconds": 1000 }
+    },
+    "minimap": {
+        "show": "always",
+        "thumb": "always",
+        "current_line_highlight": "line"
+    },
+    "indent_guides": {
+        "enabled": true,
+        "line_width": 1,
+        "active_line_width": 2,
+        "coloring": "indent_aware"
+    },
+    "auto_install_extensions": { "Catppuccin": true, "Material Icon Theme": true },
+
+    // =====================================
+    // Font
+    // =====================================
+    "ui_font_family": "FiraCode Nerd Font Mono",
+    "ui_font_size": null,
+    "buffer_font_family": "FiraCode Nerd Font Mono",
+    "buffer_font_size": 14,
+    "buffer_font_fallbacks": ["Iosevka Nerd Font Mono", "TX-02", "Maple Mono NF CN"],
+    "buffer_font_features": { "calt": true },
+
+    // =====================================
+    // Collaboration
+    // =====================================
+    "private_files": ["**/.env*", "**/*.pem", "**/*.key", "**/*.cert", "**/*.crt", "**/secrets.yml"],
+    "redact_private_values": true,
+
+    // =====================================
+    // Git
+    // =====================================
+    "git": {
+        "inline_blame": { "enabled": true }
+    },
+
+    // =====================================
+    // Multi Profiles
+    // =====================================
+    // command palete search: `settings profile selector: toggle`
+    // press shortcut: Ctrl-Win-Alt-p
+    "profiles": {
+        "python-dev": {
+            "format_on_save": "on",
+            "tab_size": 4
+        },
+        "json-dev": {
+            "format_on_save": "on",
+            "tab_size": 2
+        }
+    },
+
+    // =====================================
+    // Language & LSP
+    // =====================================
+    "auto_signature_help": false,
+    "show_signature_help_after_edits": false,
+    "diagnostics_max_severity": "all",
+    "inlay_hints": { "enabled": false },
+    "diagnostics": {
+        "include_warnings": true,
+        "inline": { "enabled": true }
+    },
+    "languages": {
+        "Python": {
+            "tab_size": 4,
+            "language_servers": ["pyright", "!basedpyright"],
+            "formatter": {
+                "external": {
+                    "command": "pwsh",
+                    "arguments": [
+                        "-c",
+                        "ruff check --select=I --fix --stdin-filename {buffer_path} | ruff format --stdin-filename {buffer_path}"
+                    ]
+                }
+            }
+        }
+    }
+}

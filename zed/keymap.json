@@ -1,0 +1,45 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    {
+        "context": "Workspace",
+        "bindings": {
+            "ctrl-f5": ["task::Spawn", { "task_name": "r/python" }]
+        }
+    },
+    {
+        "context": "Workspace && !Editor",
+        "bindings": {
+            "space e": "workspace::ToggleLeftDock",
+        },
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            "j k": "vim::NormalBefore",
+        },
+    },
+    {
+        "context": "VimControl && !menu",
+        "bindings": {
+            "shift-h": "pane::ActivatePreviousItem",
+            "shift-l": "pane::ActivateNextItem",
+            "space \\": "pane::SplitRight",
+            "space -": "pane::SplitDown",
+            "space b d": "pane::CloseActiveItem",
+            "space space": "file_finder::Toggle",
+            "space e": "workspace::ToggleLeftDock",
+            "g l": "vim::EndOfLine",
+            "g h": "vim::FirstNonWhitespace",
+            "g n": "vim::SelectNext",
+            "space z": "workspace::ToggleZoom",
+            // "ctrl-h": "workspace::ActivatePreviousPane",
+            // "ctrl-l": "workspace::ActivateNextPane",
+        },
+    }
+]
