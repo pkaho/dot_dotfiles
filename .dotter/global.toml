@@ -1,0 +1,27 @@
+[default.files]
+gitconfig = "~/.gitconfig"
+labelmerc = "~/.labelmerc"
+wslconfig = "~/.wslconfig"
+wezterm = "~/.config/wezterm"
+
+
+# ── 文件类 ────────────────────────────────────────────────────────────
+[starship_rainbow.files]
+"starship/rainbow.toml" = "~/.config/starship.toml"
+
+[starship_pure.files]
+"starship/pure.toml" = "~/.config/starship.toml"
+
+
+# ── 目录类 ────────────────────────────────────────────────────────────
+[helix.files]
+helix = "~/.config/helix"
+
+[nu.files]
+nushell = "~/.config/nushell"
+
+[pip.files]
+pip = "~/.config/pip"
+
+[zed.files]
+zed = "~/.config/zed"

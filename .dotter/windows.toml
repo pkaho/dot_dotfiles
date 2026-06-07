@@ -1,0 +1,23 @@
+# ── 文件类 ────────────────────────────────────────────────────────────
+[starship_rainbow.files]
+"starship/rainbow.toml" = "~/.config/starship.toml"
+
+[starship_pure.files]
+"starship/pure.toml" = "~/.config/starship.toml"
+
+
+# ── 目录类 ────────────────────────────────────────────────────────────
+[helix.files]
+helix = "~/AppData/Roaming/helix"
+
+[nu.files]
+nushell = "~/AppData/Roaming/nushell"
+
+[pip.files]
+pip = "~/AppData/Roaming/pip"
+
+[zed.files]
+zed = "~/AppData/Roaming/zed"
+
+[ps.files]
+PowerShell = "~/Documents/PowerShell"
