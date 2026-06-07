@@ -1,0 +1,34 @@
+theme = "ashen"
+
+[editor]
+line-number = "relative"
+mouse = true
+text-width = 120
+scrolloff = 5
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+# ------------------------
+# keymaps
+# ------------------------
+[keys.insert]
+j = { k = "normal_mode" }
+
+[keys.normal]
+C-s = ":w"
+G = "goto_last_line"
+z = { z = "goto_window_center" }
+
+[keys.normal.space]
+q = ":x"
+Q = ":q!"
+
+[keys.normal.g]
+a = "code_action"
+
