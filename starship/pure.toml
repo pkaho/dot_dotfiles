@@ -92,7 +92,7 @@ format      = "([$env_value ]($style))"
 [directory]
 truncation_length = 3
 truncation_symbol = '…/'
-read_only         = '󰌾 '
+read_only         = ' 󰌾 '
 style             = 'bg:color_bg_path fg:color_fg_path'
 read_only_style   = 'bg:color_bg_path fg:color_bg_env'
 format            = '[$path]($style)[$read_only]($read_only_style)'
