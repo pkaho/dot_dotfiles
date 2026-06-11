@@ -1,8 +1,6 @@
 [default.files]
 gitconfig = "~/.gitconfig"
 labelmerc = "~/.labelmerc"
-wslconfig = "~/.wslconfig"
-wezterm = "~/.config/wezterm"
 
 
 # ── 文件类 ────────────────────────────────────────────────────────────
@@ -14,14 +12,6 @@ wezterm = "~/.config/wezterm"
 
 
 # ── 目录类 ────────────────────────────────────────────────────────────
-[helix.files]
-helix = "~/.config/helix"
+[wezterm.files]
+wezterm = "~/.config/wezterm"
 
-[nu.files]
-nushell = "~/.config/nushell"
-
-[pip.files]
-pip = "~/.config/pip"
-
-[zed.files]
-zed = "~/.config/zed"

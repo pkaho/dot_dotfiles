@@ -1,0 +1,11 @@
+[default.files]
+ghostty = "~/.config/ghostty"
+helix = "~/.config/helix"
+hypr = "~/.config/hypr"
+kitty = "~/.config/kitty"
+pip = "~/.config/pip"
+zed = "~/.config/zed"
+zshrc = "~/.zshrc"
+zimrc = "~/.zimrc"
+zsh = "~/.zsh"
+
