@@ -61,10 +61,10 @@ return function(config)
         ["alt+z"] = act.TogglePaneZoomState,
 
         -- 调整窗格尺寸
-        ["alt+left"] = act.AdjustPaneSize({ "Left", 1 }),
-        ["alt+right"] = act.AdjustPaneSize({ "Right", 1 }),
-        ["alt+up"] = act.AdjustPaneSize({ "Up", 1 }),
-        ["alt+down"] = act.AdjustPaneSize({ "Down", 1 }),
+        ["ctrl+shift+left"] = act.AdjustPaneSize({ "Left", 1 }),
+        ["ctrl+shift+right"] = act.AdjustPaneSize({ "Right", 1 }),
+        ["ctrl+shift+up"] = act.AdjustPaneSize({ "Up", 1 }),
+        ["ctrl+shift+down"] = act.AdjustPaneSize({ "Down", 1 }),
 
         -- 在窗格之间跳转
         ["ctrl+shift+j"] = act.ActivatePaneDirection("Down"),
