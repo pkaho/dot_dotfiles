@@ -80,7 +80,7 @@ keybind = ctrl+shift+r=toggle_readonly
 # copy    - 仅复制文件路径到剪贴板
 # open    - 调用默认程序打开临时文件
 # 自测: write_screen_file：可捕获完整历史回滚内容；write_scrollback_file 仅捕获光标前内容
-keybind = ctrl+shift+alt+l=write_screen_file:paste
+keybind = ctrl+shift+alt+f12=write_screen_file:paste
 
 # 全局, 快速终端(从上方滑出一个小终端)
 keybind = global:alt+f=toggle_quick_terminal
