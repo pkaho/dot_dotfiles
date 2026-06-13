@@ -1,3 +1,65 @@
-font-family = "JetBrainsMonoNL Nerd Font Mono"
+# include 配置最后被加载
+config-file = "./conf.d/keybinds.ghostty"
+
+# ╭──────────────────────────────────────────────────────────╮
+# │ 字体                                                     │
+# ╰──────────────────────────────────────────────────────────╯
+
+font-family = "OverPassM Nerd Font Mono"
+font-family = "Maple Mono NF CN"
 font-family = "FiraCode Nerd Font Mono"
-font-size = 13
+font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-family = "RobotoMono Nerd Font Mono"
+font-family = "LXGWNeoXiHeiPlus"
+
+# 常用/生僻汉字
+font-codepoint-map = U+4E00-U+9FFF,U+3400-U+4DBF,U+20000-U+2A6DF,U+F900-U+FAFF = { family = "Maple Mono NF CN" }
+
+# Nerd Font 全域图标 + Powerline 提示符符号
+# font-codepoint-map = U+E000-U+F8FF = { family = "OverPassM Nerd Font Mono" }
+# font-codepoint-map = U+23FB-U+23FE,U+E0A0-U+E0A3,U+E0B0-U+E0C7,U+E0CA,U+E0CC,U+E0D0-U+E0D4 = { family = "OverPassM Nerd Font Mono" }
+
+font-size = 12
+
+# ╭──────────────────────────────────────────────────────────╮
+# │ theme                                                    │
+# ╰──────────────────────────────────────────────────────────╯
+
+# theme = "Breadog"
+theme = "Duckbones"
+
+background-opacity = 1
+background-blur = true
+
+split-divider-color = "#ffffff"
+
+# ╭──────────────────────────────────────────────────────────╮
+# │ 功能                                                     │
+# ╰──────────────────────────────────────────────────────────╯
+
+# 自动删除行尾空格
+clipboard-trim-trailing-spaces = true
+
+bell-features = border
+
+copy-on-select = clipboard
+right-click-action = paste
+# 回滚缓冲区大小
+scrollback-limit = 12345678
+
+
+# ╭──────────────────────────────────────────────────────────╮
+# │ 窗口                                                     │
+# ╰──────────────────────────────────────────────────────────╯
+
+# 窗口标题栏和边框
+window-decoration = none
+
+# 窗口标题
+title = "Ghostty"
+
+# title bar
+window-theme = "ghostty"
+# window-titlebar-background = "#001a3f"
+# window-titlebar-foreground = "#696291"
+
