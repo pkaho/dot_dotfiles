@@ -31,7 +31,7 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 # ╭───────────────────────────────────────────────────────────╮
 # │ 第三方工具配置                                            │
 # ╰───────────────────────────────────────────────────────────╯
-# 设置 WezTerm OSC7 集成，新窗格同步路径
+# 设置 WezTerm OSC7 集成, 新窗格同步路径
 # refer: https://wezterm.org/shell-integration.html#osc-7-on-windows-with-powershell-with-starship
 function Invoke-Starship-PreCommand {
     $current_location = $executionContext.SessionState.Path.CurrentLocation
@@ -52,11 +52,11 @@ Invoke-Expression (&scoop-search --hook)
 # 导入 Gsudo 模块
 Import-Module "gsudoModule"
 
-# 设置当前年月对应的账本文件路径，按月自动拆分记账文件
+# 设置当前年月对应的账本文件路径, 按月自动拆分记账文件
 $env:LEDGER_FILE = "~/Documents/Finances/$((date).ToString('yyyyMM')).journal"
 
 # conda init
-# conda 初始化，不存在则跳过
+# conda 初始化, 不存在则跳过
 if (Get-Command conda -ErrorAction SilentlyContinue) {
     (& conda shell.powershell hook) | Out-String | Invoke-Expression
 }

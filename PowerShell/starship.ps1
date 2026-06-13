@@ -19,7 +19,7 @@ Set-StarshipShellLevel
 Invoke-Expression (&starship init powershell)
 
 # 开启瞬态提示符
-# 历史行只保留 ❯ 符号和命令本身，隐藏路径、Git 等冗余信息
+# 历史行只保留 ❯ 符号和命令本身, 隐藏路径、Git 等冗余信息
 Enable-TransientPrompt
 
 # 仅在 Enable-TransientPrompt 时生效
