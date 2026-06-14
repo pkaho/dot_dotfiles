@@ -13,10 +13,9 @@ function labelme  { uvx labelme @args }                      # uv tool install -
 function labelimg { uvx --from labelimg labelImg.exe @args } # uv tool install -w setuptools labelimg
 
 # hledger
-$hledgerFile = "~\Documents\finances\hledger.journal"
-function hladd { hledger add }
-function hlinc { hledger incomestatement @args -f $hledgerFile }
-function hlbal { hledger balance @args -f $hledgerFile }
+$LEDGER_FILE = "~\Documents\finances\hledger.journal"
+function hlinc { hledger incomestatement @args -f $LEDGER_FILE }
+function hlbal { hledger balance @args -f $LEDGER_FILE }
 
 # eza
 Remove-Item alias:ls -Force
