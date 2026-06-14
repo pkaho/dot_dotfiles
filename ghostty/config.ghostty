@@ -1,10 +1,10 @@
-# include 配置最后被加载
+# 引入外部配置，该配置文件最后加载
 config-file = "./conf.d/keybinds.ghostty"
 
-# ╭──────────────────────────────────────────────────────────╮
-# │ 字体                                                     │
-# ╰──────────────────────────────────────────────────────────╯
-
+# -----------------------------
+# 字体设置
+# -----------------------------
+# 字体 fallback 优先级列表
 font-family = "OverPassM Nerd Font Mono"
 font-family = "Maple Mono NF CN"
 font-family = "FiraCode Nerd Font Mono"
@@ -12,54 +12,60 @@ font-family = "JetBrainsMonoNL Nerd Font Mono"
 font-family = "RobotoMono Nerd Font Mono"
 font-family = "LXGWNeoXiHeiPlus"
 
-# 常用/生僻汉字
+# 汉字字符集映射：常规汉字、扩展汉字、兼容汉字使用指定字体
 font-codepoint-map = U+4E00-U+9FFF,U+3400-U+4DBF,U+20000-U+2A6DF,U+F900-U+FAFF = { family = "Maple Mono NF CN" }
 
-# Nerd Font 全域图标 + Powerline 提示符符号
+# Nerd Font 图标 & Powerline 符号字体映射（已注释禁用）
 # font-codepoint-map = U+E000-U+F8FF = { family = "OverPassM Nerd Font Mono" }
 # font-codepoint-map = U+23FB-U+23FE,U+E0A0-U+E0A3,U+E0B0-U+E0C7,U+E0CA,U+E0CC,U+E0D0-U+E0D4 = { family = "OverPassM Nerd Font Mono" }
 
+# 全局字体大小
 font-size = 12
 
-# ╭──────────────────────────────────────────────────────────╮
-# │ theme                                                    │
-# ╰──────────────────────────────────────────────────────────╯
-
+# -----------------------------
+# 主题与视觉样式
+# -----------------------------
+# 终端主题
 # theme = "Breadog"
 theme = "Duckbones"
 
+# 背景透明度、模糊效果
 background-opacity = 1
 background-blur = true
 
+# 分栏分割线颜色
 split-divider-color = "#ffffff"
 
-# ╭──────────────────────────────────────────────────────────╮
-# │ 功能                                                     │
-# ╰──────────────────────────────────────────────────────────╯
-
-# 自动删除行尾空格
+# -----------------------------
+# 基础功能配置
+# -----------------------------
+# 复制时自动去除行尾空格
 clipboard-trim-trailing-spaces = true
 
+# 提示音样式：边框闪烁
 bell-features = border
 
+# 选中内容自动复制到剪贴板
 copy-on-select = clipboard
+
+# 右键行为：粘贴内容
 right-click-action = paste
-# 回滚缓冲区大小
+
+# 终端回滚缓冲区容量
 scrollback-limit = 12345678
 
-
-# ╭──────────────────────────────────────────────────────────╮
-# │ 窗口                                                     │
-# ╰──────────────────────────────────────────────────────────╯
-
-# 窗口标题栏和边框
+# -----------------------------
+# 窗口相关配置
+# -----------------------------
+# 窗口装饰：隐藏标题栏与边框
 window-decoration = none
 
-# 窗口标题
+# 窗口标题文本
 title = "Ghostty"
 
-# title bar
+# 窗口标题栏主题
 window-theme = "ghostty"
+# 标题栏背景色
 # window-titlebar-background = "#001a3f"
+# 标题栏文字色
 # window-titlebar-foreground = "#696291"
-
