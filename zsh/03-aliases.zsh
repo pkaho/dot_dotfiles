@@ -61,3 +61,4 @@ alias lg="lazygit"
 alias lssh="lazyssh"
 alias n="nvim"
 alias extip="curl ip.sb"
+

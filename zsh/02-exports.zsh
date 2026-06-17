@@ -53,7 +53,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # ------------------------------
 # fzf 模糊搜索配置
 # ------------------------------
-source <(fzf --zsh)
 
 # fzf 全局样式
 export FZF_DEFAULT_OPTS="
@@ -82,3 +81,4 @@ export FZF_CTRL_R_OPTS="
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
+
