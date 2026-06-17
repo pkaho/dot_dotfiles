@@ -84,4 +84,4 @@ keybind = ctrl+shift+r=toggle_readonly
 keybind = ctrl+shift+alt+f12=write_screen_file:paste
 
 # 全局快捷键：唤出顶部悬浮快速终端
-keybind = global:alt+f=toggle_quick_terminal
+keybind = global:alt+f1=toggle_quick_terminal
