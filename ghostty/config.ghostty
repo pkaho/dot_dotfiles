@@ -26,7 +26,6 @@ font-size = 12
 # 主题与视觉样式
 # -----------------------------
 # 终端主题
-# theme = "Breadog"
 theme = "Duckbones"
 
 # 背景透明度、模糊效果
@@ -69,3 +68,10 @@ window-theme = "ghostty"
 # window-titlebar-background = "#001a3f"
 # 标题栏文字色
 # window-titlebar-foreground = "#696291"
+
+# -----------------------------
+# 着色器
+# -----------------------------
+
+custom-shader-animation = true
+custom-shader = "./shaders/cursor_faded_warp_ripple.glsl"
