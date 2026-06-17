@@ -1,55 +1,26 @@
-#
-# This is not sourced during shell startup and is only used to configure zimfw.
-#
+# ========================================
+# 被覆盖的插件
+# ========================================
+# zmodule environment   # zim 预设的 setop, 已被 00-options.zsh 覆盖
+# zmodule asciiship     # Spaceship / Starship 风格 ASCII提示符
+# zmodule git-info      # Git 仓库状态, starship 内置
+# zmodule duration-info # 上一条命令耗时, starship 内置
 
-#
-# Modules
-#
+zmodule git       # Git 别名
+zmodule input     # 输入事件配置按键绑定
+zmodule termtitle # 自定义终端标题
+zmodule utility   # 常用别名、工具函数 + ls/grep/less 等命令彩色高亮
 
-# Sets sane Zsh built-in environment options.
-zmodule environment
-# Provides handy git aliases and functions.
-zmodule git
-# Applies correct bindkeys for input events.
-zmodule input
-# Sets a custom terminal title.
-zmodule termtitle
-# Utility aliases and functions. Adds colour to ls, grep and less.
-zmodule utility
+# ========================================
+# 补全模块
+# ========================================
+zmodule zsh-users/zsh-completions --fpath src # 为 zsh 拓展大量补全规则
+zmodule completion # 智能 Tab 补全, 必须在拓展补全后加载
 
-# <-- Normally new modules should be added here. Check each module documentation
-# for any caveats.
-
-#
-# Prompt
-#
-
-# Exposes how long the last command took to run to prompts.
-zmodule duration-info
-# Exposes git repository status information to prompts.
-zmodule git-info
-# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-zmodule asciiship
-
-#
-# Completion
-#
-
-# Additional completion definitions for Zsh.
-zmodule zsh-users/zsh-completions --fpath src
-# Enables and configures smart and extensive tab completion, must be sourced
-# after all modules that add completion definitions.
-zmodule completion
-
-#
-# Modules that must be initialized last
-#
-
-# Fish-like syntax highlighting for Zsh, must be sourced after completion.
-zmodule zsh-users/zsh-syntax-highlighting
-# Fish-like history search for Zsh, must be sourced after
-# zsh-users/zsh-syntax-highlighting.
-zmodule zsh-users/zsh-history-substring-search
-# Fish-like autosuggestions for Zsh. Add the following to your ~/.zshrc to boost
-# performance: ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-zmodule zsh-users/zsh-autosuggestions
+# ========================================
+# Fish 风格终端增强
+# ========================================
+zmodule zsh-users/zsh-syntax-highlighting      # 语法高亮, 补全模块后加载
+zmodule zsh-users/zsh-history-substring-search # 历史模糊检索, 语法高亮模块后加载
+zmodule zsh-users/zsh-autosuggestions          # 命令自动建议, 建议在 .zshrc 中添加下面的配置以提升性能
+# add ~/.zshrc: ZSH_AUTOSUGGEST_MANUAL_REBIND=1
