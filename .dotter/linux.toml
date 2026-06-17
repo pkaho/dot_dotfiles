@@ -1,4 +1,5 @@
 [default.files]
+cargo = "~/.cargo"
 ghostty = "~/.config/ghostty"
 helix = "~/.config/helix"
 hypr = "~/.config/hypr"
