@@ -55,7 +55,6 @@ alias -g G="| rg -i"  # e.g. `ps -ef G python`
 # ------------------------------
 # 通用快捷命令
 # ------------------------------
-alias c="clear"
 alias path='echo -e ${PATH//:/\\n}' # PATH变量分行展示, 保持单引号, 双引号会提前解析变量
 alias lg="lazygit"
 alias lssh="lazyssh"
